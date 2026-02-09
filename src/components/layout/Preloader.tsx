@@ -167,9 +167,9 @@ export default function Preloader() {
           style={{ transform: "scaleX(0)", opacity: 0 }}
         />
 
-        {/* KXNZO letters */}
+        {/* EazyOnDaBeatz letters */}
         <div ref={lettersRef} className="flex items-center gap-1">
-          {"KXNZO".split("").map((letter, i) => (
+          {"EazyOnDaBeatz".split("").map((letter, i) => (
             <span
               key={i}
               className="preloader-letter font-display text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-wide text-white"

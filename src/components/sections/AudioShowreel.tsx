@@ -9,11 +9,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const tracks = [
-  { title: "Midnight Seoul", artist: "KXNZO x DEAN", bpm: "140", key: "Cm", tags: ["R&B", "Trap"] },
-  { title: "Lagos Nights", artist: "KXNZO x Wizkid", bpm: "100", key: "G#m", tags: ["Afrobeats"] },
-  { title: "Neon Rain", artist: "KXNZO", bpm: "128", key: "Am", tags: ["Synthwave"] },
-  { title: "Deep Space", artist: "KXNZO x Travis", bpm: "150", key: "Fm", tags: ["Hip-Hop"] },
-  { title: "Golden Hour", artist: "KXNZO", bpm: "95", key: "E", tags: ["Soul"] },
+  { title: "Midnight Seoul", artist: "EazyOnDaBeatz x DEAN", bpm: "140", key: "Cm", tags: ["R&B", "Trap"] },
+  { title: "Lagos Nights", artist: "EazyOnDaBeatz x Wizkid", bpm: "100", key: "G#m", tags: ["Afrobeats"] },
+  { title: "Neon Rain", artist: "EazyOnDaBeatz", bpm: "128", key: "Am", tags: ["Synthwave"] },
+  { title: "Deep Space", artist: "EazyOnDaBeatz x Travis", bpm: "150", key: "Fm", tags: ["Hip-Hop"] },
+  { title: "Golden Hour", artist: "EazyOnDaBeatz", bpm: "95", key: "E", tags: ["Soul"] },
 ];
 
 export default function AudioShowreel() {

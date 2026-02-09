@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     id: 1,
-    quote: "KXNZO doesn't just make beats — he builds sonic architectures. Every session is a masterclass in frequency and emotion.",
+    quote: "EazyOnDaBeatz doesn't just make beats — he builds sonic architectures. Every session is a masterclass in frequency and emotion.",
     author: "Drake",
     title: "Artist",
   },
