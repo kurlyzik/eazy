@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 export default function Preloader() {
   const [isVisible, setIsVisible] = useState(true);
   const [started, setStarted] = useState(false);
+  const [assetsReady, setAssetsReady] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
   const lettersRef = useRef<HTMLDivElement>(null);
@@ -13,13 +14,61 @@ export default function Preloader() {
   const rippleRef = useRef<HTMLDivElement>(null);
   const enterRef = useRef<HTMLButtonElement>(null);
 
+  // Wait for all critical assets before showing the press play screen
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    const waitForAssets = async () => {
+      const promises: Promise<unknown>[] = [];
+
+      // 1. Wait for all fonts to load
+      if (document.fonts?.ready) {
+        promises.push(document.fonts.ready);
+      }
+
+      // 2. Preload the hero video poster so it's cached
+      promises.push(
+        new Promise<void>((resolve) => {
+          const img = new Image();
+          img.onload = () => resolve();
+          img.onerror = () => resolve();
+          img.src = "/media/hero-poster.jpg";
+        })
+      );
+
+      // 3. Preload the audio file
+      promises.push(
+        new Promise<void>((resolve) => {
+          const audio = new Audio();
+          audio.oncanplaythrough = () => resolve();
+          audio.onerror = () => resolve();
+          audio.src = "/media/audio/pressplay.mp3";
+        })
+      );
+
+      // 4. Wait for the DOM to be fully loaded
+      if (document.readyState !== "complete") {
+        promises.push(
+          new Promise<void>((resolve) => {
+            window.addEventListener("load", () => resolve(), { once: true });
+          })
+        );
+      }
+
+      // Race against a timeout so we don't hang forever
+      await Promise.race([
+        Promise.all(promises),
+        new Promise((resolve) => setTimeout(resolve, 5000)),
+      ]);
+
+      setAssetsReady(true);
+    };
+
+    waitForAssets();
+  }, []);
+
   const animate = useCallback(() => {
     if (!containerRef.current || !lineRef.current || !lettersRef.current || !waveformRef.current) return;
-
-    // Play the intro sound (called after user click, so autoplay is allowed)
-    const audio = new Audio("/media/audio/pressplay.mp3");
-    audio.volume = 0.5;
-    audio.play().catch(() => {});
 
     const tl = gsap.timeline({
       onComplete: () => {
@@ -116,6 +165,13 @@ export default function Preloader() {
 
   const handleEnter = useCallback(() => {
     setStarted(true);
+
+    // Play audio immediately on user gesture — must not be delayed by GSAP
+    // or browsers (especially Safari/iOS) will block it as non-user-initiated
+    const audio = new Audio("/media/audio/pressplay.mp3");
+    audio.volume = 0.5;
+    audio.play().catch(() => {});
+
     // Fade out the enter button, then start the main animation
     if (enterRef.current) {
       gsap.to(enterRef.current, {
@@ -126,10 +182,6 @@ export default function Preloader() {
       animate();
     }
   }, [animate]);
-
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-  }, []);
 
   if (!isVisible) return null;
 
@@ -153,12 +205,20 @@ export default function Preloader() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full border border-white/15 opacity-0"
       />
 
-      {/* Click to enter — required for browser audio autoplay policy */}
-      {!started && (
+      {/* Loading state — shown while assets are loading */}
+      {!assetsReady && (
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-6">
+          {/* Pulsing dot */}
+          <div className="w-2 h-2 rounded-full bg-white/30 animate-pulse" />
+        </div>
+      )}
+
+      {/* Click to enter — only shown after all assets are ready */}
+      {assetsReady && !started && (
         <button
           ref={enterRef}
           onClick={handleEnter}
-          className="absolute inset-0 z-10 flex flex-col items-center justify-center cursor-pointer group"
+          className="absolute inset-0 z-10 flex flex-col items-center justify-center cursor-pointer group animate-[fade-in_0.6s_ease_forwards]"
         >
           {/* Outer container for the animated button */}
           <div className="relative flex items-center justify-center w-48 h-48 mb-8">
