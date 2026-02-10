@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const stats = [
   { label: "Releases", value: 50, suffix: "+", decimals: 0 },
   { label: "Credits", value: 30, suffix: "+", decimals: 0 },
-  { label: "Collaborations", value: 20, suffix: "+", decimals: 0 },
+  { label: "Collabs", value: 20, suffix: "+", decimals: 0 },
   { label: "Years Active", value: 5, suffix: "+", decimals: 0 },
 ];
 
@@ -196,9 +196,9 @@ export default function About() {
 
             {/* Stats — stacked rows */}
             <div className="mt-16 pt-12 border-t border-white/5">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-8">
                 {stats.map((stat) => (
-                  <div key={stat.label} className="flex flex-col">
+                  <div key={stat.label} className="flex flex-col min-w-0">
                     <span className="text-5xl md:text-6xl text-white" style={{ fontFamily: "var(--font-alt)" }}>
                       <Counter to={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
                     </span>
