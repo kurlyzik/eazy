@@ -34,7 +34,7 @@ export default function Hero() {
       gsap.to(topBlockRef.current, {
         x: nx * -15,
         y: ny * -8,
-        duration: 1,
+        duration: 0.4,
         ease: "power2.out",
         overwrite: true,
       });
@@ -43,7 +43,7 @@ export default function Hero() {
       gsap.to(bottomBlockRef.current, {
         x: nx * 15,
         y: ny * 8,
-        duration: 1,
+        duration: 0.4,
         ease: "power2.out",
         overwrite: true,
       });
@@ -51,7 +51,7 @@ export default function Hero() {
     if (circleRef.current) {
       gsap.to(circleRef.current, {
         rotation: nx * 25,
-        duration: 1.5,
+        duration: 0.6,
         ease: "power2.out",
         overwrite: true,
       });
