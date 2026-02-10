@@ -41,7 +41,7 @@ export default function Services() {
   return (
     <section id="services" className="relative py-32 md:py-48 bg-black overflow-hidden min-h-screen flex flex-col justify-center">
       <div className="max-w-[1000px] mx-auto px-6 md:px-12 relative z-10 w-full">
-        <h2 ref={titleRef} className="font-display text-7xl md:text-9xl text-white mb-24 leading-none">
+        <h2 ref={titleRef} className="text-7xl md:text-9xl text-white mb-24 leading-none uppercase" style={{ fontFamily: "var(--font-display)" }}>
           LET&apos;S WORK
         </h2>
 
@@ -56,11 +56,11 @@ export default function Services() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <span className={`font-display text-3xl md:text-5xl flex-1 transition-all duration-500 ${
+                <span className={`text-3xl md:text-5xl flex-1 transition-all duration-500 ${
                   openService === service.id
                     ? "text-white"
                     : "text-white group-hover:text-white/80 group-hover:translate-x-2"
-                }`} style={{ transition: "transform 0.5s ease, color 0.5s ease" }}>
+                }`} style={{ fontFamily: "var(--font-accent)", transition: "transform 0.5s ease, color 0.5s ease" }}>
                   {service.title}
                 </span>
 

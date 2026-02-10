@@ -6,20 +6,20 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     id: 1,
-    quote: "EazyOnDaBeatz doesn't just make beats — he builds sonic architectures. Every session is a masterclass in frequency and emotion.",
-    author: "Drake",
+    quote: "The bounce on every track is infectious. EazyOnDaBeatz knows exactly how to make a record move.",
+    author: "Celo",
     title: "Artist",
   },
   {
     id: 2,
-    quote: "The way he manipulates space in a mix is unlike anything I've heard. A true visionary with a dangerous ear.",
-    author: "Metro Boomin",
+    quote: "His percussion is crisp, his melodies are layered, and every beat feels like it was built to replay on loop.",
+    author: "Studio Partner",
     title: "Producer",
   },
   {
     id: 3,
-    quote: "Working with him felt like uncovering a new language. He found the sounds I didn't even know I was looking for.",
-    author: "Tems",
+    quote: "When Eazy sends a beat, you already hear the finished record. He doesn't just produce — he elevates.",
+    author: "Collaborator",
     title: "Artist",
   },
 ];
@@ -71,12 +71,12 @@ export default function Testimonials() {
               transition={{ duration: 0.8, ease: "easeInOut" }}
               className="absolute inset-0 flex flex-col items-center justify-center"
             >
-              <p className="font-serif italic text-2xl md:text-4xl lg:text-5xl text-white leading-tight mb-12">
+              <p className="italic text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-12" style={{ fontFamily: "var(--font-cursive)" }}>
                 &ldquo;{testimonials[current].quote}&rdquo;
               </p>
 
               <div className="flex flex-col items-center">
-                <h4 className="font-display text-lg tracking-[0.2em] text-white">
+                <h4 className="text-lg tracking-[0.2em] text-white uppercase" style={{ fontFamily: "var(--font-alt)" }}>
                   {testimonials[current].author}
                 </h4>
                 <span className="font-sans text-xs text-white/30 uppercase tracking-wider mt-1">

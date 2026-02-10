@@ -93,7 +93,7 @@ export default function Header() {
           <Link href="/" className="relative z-50 group" data-cursor="hover">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <span className="font-display text-xl md:text-2xl tracking-[0.2em] text-white block leading-none">
+                <span className="text-xl md:text-2xl tracking-[0.2em] text-white block leading-none" style={{ fontFamily: "var(--font-alt)" }}>
                   EazyOnDaBeatz
                 </span>
                 <span
@@ -102,7 +102,7 @@ export default function Header() {
                 />
               </div>
               <span className="hidden md:block text-[8px] tracking-[0.3em] uppercase text-white/20 font-sans leading-tight border-l border-white/10 pl-3">
-                World<br />Builder
+                Press<br />Play
               </span>
             </div>
           </Link>
@@ -145,7 +145,7 @@ export default function Header() {
             <div className="ml-6 pl-6 border-l border-white/10 flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-white/20 animate-pulse" />
               <span className="text-[9px] font-mono text-white/20 tracking-wider">
-                LA
+                LG
               </span>
             </div>
           </nav>
@@ -219,7 +219,7 @@ export default function Header() {
                     <span className="text-[10px] font-mono text-white/20 w-6 shrink-0">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="font-display text-4xl sm:text-5xl text-white/90 group-hover:text-white transition-colors duration-300 leading-none">
+                    <span className="text-4xl sm:text-5xl text-white/90 group-hover:text-white transition-colors duration-300 leading-none uppercase" style={{ fontFamily: "var(--font-display)" }}>
                       {link.name}
                     </span>
                     <span className="flex-1 h-[1px] bg-white/5 self-center hidden sm:block" />
@@ -236,10 +236,10 @@ export default function Header() {
               >
                 <div className="flex flex-col gap-1">
                   <span className="text-[9px] font-mono tracking-[0.3em] text-white/15 uppercase">
-                    Los Angeles, CA
+                    Lagos, Nigeria
                   </span>
                   <span className="text-[9px] font-mono tracking-wider text-white/15">
-                    34.05&deg;N / 118.24&deg;W
+                    6.52&deg;N / 3.38&deg;E
                   </span>
                 </div>
                 <span className="text-[9px] font-mono text-white/15">

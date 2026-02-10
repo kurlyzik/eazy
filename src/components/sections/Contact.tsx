@@ -33,7 +33,7 @@ export default function Contact() {
   }, []);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("hello@kxnzo.com");
+    navigator.clipboard.writeText("hello@eazyondabeatz.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -47,14 +47,14 @@ export default function Contact() {
         {/* Left: Headline & Info */}
         <div className="flex flex-col justify-between">
           <div>
-            <h2 ref={headlineRef} className="font-display text-6xl md:text-7xl lg:text-8xl text-white leading-[0.85] mb-12">
-              LET&apos;S BUILD SOMETHING{" "}
-              <span className="text-white">LEGENDARY.</span>
+            <h2 ref={headlineRef} className="text-6xl md:text-7xl lg:text-8xl text-white leading-[0.85] mb-12 uppercase" style={{ fontFamily: "var(--font-display)" }}>
+              LET&apos;S MAKE SOMETHING{" "}
+              <span className="text-white">THAT MOVES.</span>
             </h2>
 
             <div className="flex items-center gap-4 group cursor-pointer w-max" onClick={copyEmail}>
               <span className="font-mono text-lg md:text-xl text-white/60 group-hover:text-white transition-colors">
-                hello@kxnzo.com
+                hello@eazyondabeatz.com
               </span>
               <button className="p-2 rounded-full bg-white/5 hover:bg-white transition-colors">
                 {copied ? <Check size={14} className="text-white" /> : <Copy size={14} className="text-white/60" />}
@@ -86,8 +86,8 @@ export default function Contact() {
             <select className="w-full bg-transparent border-b border-white/10 py-4 text-lg font-display tracking-widest text-white/40 focus:outline-none focus:border-white transition-colors appearance-none cursor-pointer">
               <option value="" disabled selected>PROJECT TYPE</option>
               <option value="beat" className="bg-black text-white">Beat Production</option>
+              <option value="additional" className="bg-black text-white">Additional Production</option>
               <option value="mix" className="bg-black text-white">Mixing & Mastering</option>
-              <option value="score" className="bg-black text-white">Film/TV Score</option>
               <option value="other" className="bg-black text-white">Other</option>
             </select>
           </div>
@@ -102,7 +102,7 @@ export default function Contact() {
 
           <button type="submit" className="form-field group relative w-full overflow-hidden bg-transparent border border-white/10 py-6 text-center transition-all hover:border-white/50">
             <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
-            <span className="relative font-display text-xl tracking-[0.2em] text-white group-hover:text-black transition-colors duration-500 flex items-center justify-center gap-4">
+            <span className="relative text-xl tracking-[0.2em] text-white group-hover:text-black transition-colors duration-500 flex items-center justify-center gap-4 uppercase" style={{ fontFamily: "var(--font-alt)" }}>
               SEND MESSAGE <ArrowUpRight size={20} />
             </span>
           </button>

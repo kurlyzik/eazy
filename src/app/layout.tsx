@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Space_Grotesk, Great_Vibes, Monoton, Bebas_Neue, Concert_One, Audiowide, Righteous } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import GrainOverlay from "@/components/layout/GrainOverlay";
@@ -11,6 +11,42 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const greatVibes = Great_Vibes({
+  variable: "--font-great-vibes",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const monoton = Monoton({
+  variable: "--font-monoton",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas-neue",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const concertOne = Concert_One({
+  variable: "--font-concert-one",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const audiowide = Audiowide({
+  variable: "--font-audiowide",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const righteous = Righteous({
+  variable: "--font-righteous",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://eazyondabeatz.com";
@@ -26,26 +62,25 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "EazyOnDaBeatz | Music Producer & Sound Designer",
+    default: "EazyOnDaBeatz | Afrobeats Producer",
     template: "%s | EazyOnDaBeatz",
   },
   description:
-    "Grammy-nominated music producer and sound designer based in Los Angeles. Custom beat production, mixing & mastering, film scoring, and artist development. I don't make beats — I build worlds.",
+    "Afrobeats producer from Lagos. Crisp percussion, melodic textures, and records built on bounce, clarity, and replay value. Credits include Celo's Insanity.",
 
   keywords: [
     "EazyOnDaBeatz",
-    "music producer",
+    "Afrobeats producer",
+    "Lagos producer",
     "beat maker",
-    "sound designer",
-    "mixing and mastering",
-    "film scoring",
-    "Los Angeles producer",
-    "hip hop producer",
-    "R&B producer",
-    "afrobeats producer",
+    "music producer",
+    "Afrobeats beats",
+    "Nigerian producer",
+    "crisp percussion",
+    "melodic textures",
+    "Celo Insanity",
     "custom beats",
-    "artist development",
-    "Grammy nominated producer",
+    "press play",
   ],
 
   authors: [{ name: "EazyOnDaBeatz" }],
@@ -69,15 +104,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "EazyOnDaBeatz",
-    title: "EazyOnDaBeatz | Music Producer & Sound Designer",
+    title: "EazyOnDaBeatz | Afrobeats Producer",
     description:
-      "Grammy-nominated music producer and sound designer. Custom beat production, mixing & mastering, film scoring, and artist development.",
+      "Afrobeats producer from Lagos. Crisp percussion, melodic textures, and records built on bounce, clarity, and replay value.",
     images: [
       {
         url: "/media/hero-poster.jpg",
         width: 1200,
         height: 630,
-        alt: "EazyOnDaBeatz — Music Producer & Sound Designer",
+        alt: "EazyOnDaBeatz — Afrobeats Producer",
         type: "image/jpeg",
       },
     ],
@@ -85,11 +120,11 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "EazyOnDaBeatz | Music Producer & Sound Designer",
+    title: "EazyOnDaBeatz | Afrobeats Producer",
     description:
-      "Grammy-nominated music producer and sound designer. I don't make beats — I build worlds.",
+      "Afrobeats producer from Lagos. Bounce, clarity, replay value. Press Play.",
     images: ["/media/hero-poster.jpg"],
-    creator: "@eazyondabeatz",
+    creator: "@eazyondebeatz_",
   },
 
   alternates: {
@@ -113,7 +148,7 @@ function JsonLd() {
         "@id": `${siteUrl}/#website`,
         url: siteUrl,
         name: "EazyOnDaBeatz",
-        description: "Grammy-nominated music producer and sound designer based in Los Angeles.",
+        description: "Afrobeats producer from Lagos. Bounce, clarity, replay value.",
         publisher: { "@id": `${siteUrl}/#person` },
         inLanguage: "en-US",
       },
@@ -123,38 +158,36 @@ function JsonLd() {
         name: "EazyOnDaBeatz",
         url: siteUrl,
         image: `${siteUrl}/media/hero-poster.jpg`,
-        jobTitle: "Music Producer & Sound Designer",
+        jobTitle: "Afrobeats Producer",
         description:
-          "Grammy-nominated music producer and sound designer specializing in custom beat production, mixing & mastering, film scoring, and artist development.",
+          "Afrobeats producer from Lagos whose work is built on bounce, clarity, and replay value. Blending crisp percussion with melodic textures to create records that move.",
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Los Angeles",
-          addressRegion: "CA",
-          addressCountry: "US",
+          addressLocality: "Lagos",
+          addressCountry: "NG",
         },
         sameAs: [
-          "https://instagram.com/eazyondabeatz",
-          "https://twitter.com/eazyondabeatz",
-          "https://youtube.com/@eazyondabeatz",
+          "https://instagram.com/eazyondebeatz_",
+          "https://open.spotify.com/user/31nlkyhcf7mf3qrrqfnr254jypay",
         ],
         knowsAbout: [
-          "Music Production",
+          "Afrobeats Production",
           "Beat Making",
-          "Mixing & Mastering",
-          "Film Scoring",
-          "Sound Design",
-          "Artist Development",
+          "Music Production",
+          "Additional Production",
+          "Percussion Design",
+          "Melodic Textures",
         ],
       },
       {
         "@type": "WebPage",
         "@id": `${siteUrl}/#webpage`,
         url: siteUrl,
-        name: "EazyOnDaBeatz | Music Producer & Sound Designer",
+        name: "EazyOnDaBeatz | Afrobeats Producer",
         isPartOf: { "@id": `${siteUrl}/#website` },
         about: { "@id": `${siteUrl}/#person` },
         description:
-          "Official portfolio of EazyOnDaBeatz — Grammy-nominated music producer and sound designer based in Los Angeles.",
+          "Official portfolio of EazyOnDaBeatz — Afrobeats producer from Lagos.",
         inLanguage: "en-US",
       },
       {
@@ -163,22 +196,21 @@ function JsonLd() {
         name: "EazyOnDaBeatz",
         url: siteUrl,
         image: `${siteUrl}/media/hero-poster.jpg`,
-        genre: ["Hip-Hop", "R&B", "Afrobeats", "Pop", "Film Score"],
+        genre: ["Afrobeats", "Afropop", "Afro-Fusion"],
         description:
-          "Grammy-nominated music producer specializing in custom beat production, film scoring, and sonic world-building.",
+          "Afrobeats producer blending crisp percussion with melodic textures. Credits include Celo's Insanity.",
       },
       {
         "@type": "Service",
         "@id": `${siteUrl}/#services`,
         provider: { "@id": `${siteUrl}/#person` },
         name: "Music Production Services",
-        description: "Professional music production services including custom beats, mixing, mastering, film scoring, and artist development.",
+        description: "Professional Afrobeats production services including custom beats, additional production, and creative partnerships.",
         serviceType: [
-          "Custom Beat Production",
+          "Beat Production",
+          "Additional Production",
           "Mixing & Mastering",
-          "Film & TV Scoring",
-          "Sound Design",
-          "Artist Development",
+          "Creative Partnerships",
         ],
         areaServed: {
           "@type": "Place",
@@ -207,7 +239,7 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body
-        className={`${spaceGrotesk.variable} antialiased bg-black text-white overflow-x-hidden`}
+        className={`${spaceGrotesk.variable} ${greatVibes.variable} ${monoton.variable} ${bebasNeue.variable} ${concertOne.variable} ${audiowide.variable} ${righteous.variable} antialiased bg-black text-white overflow-x-hidden`}
       >
         <SmoothScroll>
           <GrainOverlay />

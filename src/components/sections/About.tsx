@@ -9,15 +9,15 @@ import { IMAGES } from "@/lib/images";
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { label: "Streams", value: 2.4, suffix: "B+", decimals: 1 },
-  { label: "Placements", value: 300, suffix: "+", decimals: 0 },
-  { label: "Grammy Noms", value: 12, suffix: "", decimals: 0 },
-  { label: "#1 Hits", value: 6, suffix: "", decimals: 0 },
+  { label: "Releases", value: 50, suffix: "+", decimals: 0 },
+  { label: "Credits", value: 30, suffix: "+", decimals: 0 },
+  { label: "Collaborations", value: 20, suffix: "+", decimals: 0 },
+  { label: "Years Active", value: 5, suffix: "+", decimals: 0 },
 ];
 
 function Counter({ to, suffix, decimals }: { to: number; suffix: string; decimals: number }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-20px" });
 
   useEffect(() => {
     if (inView && ref.current) {
@@ -162,7 +162,8 @@ export default function About() {
           <div className="w-full lg:w-[45%] flex flex-col justify-center">
             <h2
               ref={headlineRef}
-              className="font-display text-5xl md:text-7xl lg:text-8xl text-white mb-12 leading-[0.9] overflow-hidden"
+              className="text-5xl md:text-7xl lg:text-8xl text-white mb-12 leading-[0.9] overflow-hidden uppercase"
+              style={{ fontFamily: "var(--font-heading)" }}
             >
               {"THE SOUND BEHIND THE SOUND".split(" ").map((word, i) => (
                 <span key={i} className="inline-block overflow-hidden mr-3">
@@ -176,18 +177,20 @@ export default function About() {
               className="space-y-6 text-white/50 font-sans text-base md:text-lg leading-relaxed max-w-xl"
             >
               <p>
-                Music isn&apos;t just listening — it&apos;s a place you go. For over a decade,
-                I&apos;ve been architecting sonic landscapes that don&apos;t just sit in
-                the background; they consume the room.
+                EazyOnDaBeatz is an Afrobeats producer from Lagos whose work is
+                built on bounce, clarity, and replay value. Blending crisp
+                percussion with melodic textures, he creates records that feel
+                current while still carrying a signature groove.
               </p>
               <p>
-                From the underground grit of London to the polished studios of
-                LA, my philosophy remains unchanged: every beat must tell a
-                story, and every silence must have weight.
+                With credits including Celo&apos;s &ldquo;Insanity,&rdquo; EazyOnDaBeatz
+                continues to expand his sound through consistent releases and
+                creative partnerships.
               </p>
               <p>
-                I don&apos;t chase trends. I sculpt frequencies that resonate with
-                the human nervous system.
+                Whether producing from scratch or adding additional production to
+                elevate a record, the goal stays the same: make music that
+                moves — then hit &ldquo;press play&rdquo; again.
               </p>
             </div>
 
@@ -196,7 +199,7 @@ export default function About() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {stats.map((stat) => (
                   <div key={stat.label} className="flex flex-col">
-                    <span className="font-display text-5xl md:text-6xl text-white">
+                    <span className="text-5xl md:text-6xl text-white" style={{ fontFamily: "var(--font-alt)" }}>
                       <Counter to={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
                     </span>
                     <span className="text-xs uppercase tracking-[0.2em] text-white/70 mt-2 font-sans">

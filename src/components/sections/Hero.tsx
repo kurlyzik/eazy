@@ -207,14 +207,15 @@ export default function Hero() {
           style={{ opacity: 0 }}
         >
           <h1
-            className="font-display leading-[0.85] tracking-tight"
+            className="leading-[0.85] tracking-tight uppercase"
             style={{
+              fontFamily: "var(--font-display)",
               fontSize: "clamp(2.5rem, 9vw, 8.5rem)",
               WebkitTextStroke: "1.5px rgba(255,255,255,0.6)",
               color: "transparent",
             }}
           >
-            I DON&apos;T MAKE BEATS
+            PRESS PLAY
           </h1>
         </div>
 
@@ -241,20 +242,21 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Bottom text: "I BUILD WORLDS." — solid white, larger */}
+        {/* Bottom text: "FEEL THE BOUNCE." — solid white, larger */}
         <div
           ref={bottomBlockRef}
           className="text-center mt-0"
           style={{ opacity: 0 }}
         >
           <h2
-            className="font-display leading-[0.85] tracking-tight text-white"
+            className="leading-[0.85] tracking-tight text-white uppercase"
             style={{
+              fontFamily: "var(--font-display)",
               fontSize: "clamp(2.8rem, 10vw, 9.5rem)",
               textShadow: "0 4px 40px rgba(0,0,0,0.5), 0 0 120px rgba(255,255,255,0.06)",
             }}
           >
-            I BUILD WORLDS.
+            FEEL THE BOUNCE.
           </h2>
         </div>
 
@@ -269,7 +271,7 @@ export default function Hero() {
           </span>
           <div className="w-[1px] h-16 bg-gradient-to-b from-white/15 to-transparent" />
           <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase" style={{ writingMode: "vertical-lr" }}>
-            World Builder
+            Press Play
           </span>
         </div>
 
@@ -279,39 +281,41 @@ export default function Hero() {
           style={{ opacity: 0 }}
         >
           <span className="font-mono text-[9px] tracking-[0.3em] text-white/20 uppercase">
-            Los Angeles
+            Lagos
           </span>
           <div className="w-[1px] h-16 bg-gradient-to-b from-white/15 to-transparent" />
           <span className="font-mono text-[9px] tracking-wider text-white/20">
-            34.05&deg;N
+            6.52&deg;N
           </span>
           <span className="font-mono text-[9px] tracking-wider text-white/20">
-            118.24&deg;W
+            3.38&deg;E
           </span>
         </div>
 
         {/* Subtitle */}
         <div ref={subtitleRef} className="mt-12 md:mt-16 text-center" style={{ opacity: 0 }}>
           <p className="font-sans text-[11px] md:text-xs tracking-[0.35em] uppercase text-white/30 font-light">
-            Grammy-nominated producer
+            Afrobeats producer
             <span className="inline-block w-6 h-[1px] bg-white/15 mx-4 align-middle" />
-            2B+ streams
+            Lagos, Nigeria
             <span className="inline-block w-6 h-[1px] bg-white/15 mx-4 align-middle" />
-            Sound Architect
+            Bounce &middot; Clarity &middot; Replay
           </p>
         </div>
 
-        {/* CTA */}
-        <div ref={ctaRef} className="mt-10" style={{ opacity: 0 }}>
-          <a
-            href="#music"
-            className="group relative inline-flex items-center gap-4 px-8 py-4 font-sans text-[10px] tracking-[0.4em] uppercase text-white/40 hover:text-white transition-all duration-700 border border-white/10 hover:border-white/25 rounded-full backdrop-blur-sm"
+        {/* Scroll to explore */}
+        <div ref={ctaRef} className="mt-12 flex flex-col items-center gap-3" style={{ opacity: 0 }}>
+          <span className="font-mono text-[9px] tracking-[0.4em] uppercase text-white/20">
+            Scroll to explore
+          </span>
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" as const }}
           >
-            <span>Enter the World</span>
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
-              <path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" strokeWidth="1.2" />
+            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" className="text-white/20">
+              <path d="M8 4V20M8 20L2 14M8 20L14 14" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </a>
+          </motion.div>
         </div>
       </motion.div>
 

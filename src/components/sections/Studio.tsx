@@ -68,7 +68,7 @@ export default function Studio() {
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-        <h2 className="font-display text-6xl md:text-8xl text-stroke text-center mb-32 opacity-60">
+        <h2 className="text-6xl md:text-8xl text-stroke text-center mb-32 opacity-60 uppercase" style={{ fontFamily: "var(--font-heading)" }}>
           WHERE MAGIC HAPPENS
         </h2>
 
@@ -92,7 +92,7 @@ export default function Studio() {
 
                 {/* Content */}
                 <div className="flex-1 max-w-2xl">
-                  <h3 className="step-title font-display text-5xl md:text-7xl text-white mb-6">{step.title}</h3>
+                  <h3 className="step-title text-5xl md:text-7xl text-white mb-6 uppercase" style={{ fontFamily: "var(--font-display)" }}>{step.title}</h3>
                   <p className="step-desc font-sans text-base md:text-lg text-white/40 leading-relaxed">{step.desc}</p>
                 </div>
               </div>

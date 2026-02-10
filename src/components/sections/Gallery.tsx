@@ -145,7 +145,7 @@ export default function Gallery() {
         {/* Section header */}
         <div ref={titleRef} className="mb-20 md:mb-28">
           <div className="title-line h-[1px] bg-gradient-to-r from-white/30 to-transparent origin-left mb-8 w-full max-w-[200px]" style={{ transform: "scaleX(0)" }} />
-          <h2 className="title-text font-display text-6xl md:text-8xl lg:text-9xl text-white leading-[0.85] tracking-tight" style={{ opacity: 0 }}>
+          <h2 className="title-text text-6xl md:text-8xl lg:text-9xl text-white leading-[0.85] tracking-tight uppercase" style={{ fontFamily: "var(--font-decorative)", opacity: 0 }}>
             IN THE<br />
             <span className="text-white/30">ROOM</span>
           </h2>

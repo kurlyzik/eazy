@@ -1,13 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Instagram, Twitter, Youtube, Music2 } from "lucide-react";
+import { Instagram, Music2 } from "lucide-react";
 
 const socials = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Music2, href: "#", label: "Music" },
+  { icon: Instagram, href: "https://instagram.com/eazyondebeatz_", label: "Instagram" },
+  { icon: Music2, href: "https://open.spotify.com/user/31nlkyhcf7mf3qrrqfnr254jypay", label: "Spotify" },
 ];
 
 export default function Footer() {
