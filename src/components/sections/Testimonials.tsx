@@ -61,7 +61,7 @@ export default function Testimonials() {
           What They Say
         </h2>
 
-        <div className="relative min-h-[300px] md:min-h-[350px] flex items-center justify-center">
+        <div className="relative min-h-[400px] md:min-h-[450px] flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -69,9 +69,9 @@ export default function Testimonials() {
               animate={{ opacity: 1, filter: "blur(0px)" }}
               exit={{ opacity: 0, filter: "blur(10px)" }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute inset-0 flex flex-col items-center justify-center"
+              className="absolute inset-0 flex flex-col items-center justify-center px-2"
             >
-              <p className="italic text-3xl md:text-5xl lg:text-6xl text-white leading-tight mb-12" style={{ fontFamily: "var(--font-cursive)" }}>
+              <p className="italic text-lg md:text-2xl lg:text-3xl text-white leading-relaxed mb-12" style={{ fontFamily: "var(--font-cursive)" }}>
                 &ldquo;{testimonials[current].quote}&rdquo;
               </p>
 
