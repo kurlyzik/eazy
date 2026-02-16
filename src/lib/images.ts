@@ -21,10 +21,11 @@ export const IMAGES = {
     celo: "https://i.scdn.co/image/ab6761610000e5eb70b6546a99e68042fb9353f0",
     otega: "https://i.scdn.co/image/ab6761610000e5ebf64e8ce5f67b296ebf98ce1f",
     mohbad: "https://i.scdn.co/image/ab6761610000e5eb5229542d1c2abba84abbf545",
-    dannyello: "https://i.scdn.co/image/ab6761610000e5ebb4c9da97d90992198ddba60c",
+    dannyello:
+      "https://i.scdn.co/image/ab6761610000e5ebb4c9da97d90992198ddba60c",
     sharlly: "https://i.scdn.co/image/ab6761610000e5eb76e6537819d696bcf2793b0b",
     blaqmix: "https://i.audiomack.com/djblaqmix/11b67461ce.webp?width=400",
-    layonn: "https://i.scdn.co/image/ab6761610000e5eb6310ce7b58b5b931c869bcc1",
+    layonn: "/media/images/credits/layonn.png",
   },
 
   // ─── GALLERY ─────────────────────────────────────────────────

@@ -6,21 +6,24 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     id: 1,
-    quote: "The bounce on every track is infectious. EazyOnDaBeatz knows exactly how to make a record move.",
+    quote:
+      "The bounce on every track is infectious. EazyOnDeBeatz knows exactly how to make a record move.",
     author: "Celo",
-    title: "Artist",
+    title: "Artiste",
   },
   {
     id: 2,
-    quote: "His percussion is crisp, his melodies are layered, and every beat feels like it was built to replay on loop.",
-    author: "Studio Partner",
-    title: "Producer",
+    quote:
+      "His percussion is crisp, his melodies are layered, and every beat feels like it was built to replay on loop.",
+    author: "Sharlly",
+    title: "Artiste",
   },
   {
     id: 3,
-    quote: "When Eazy sends a beat, you already hear the finished record. He doesn't just produce — he elevates.",
-    author: "Collaborator",
-    title: "Artist",
+    quote:
+      "When Eazy sends a beat, you already hear the finished record. He doesn't just produce — he elevates.",
+    author: "BlaQMix",
+    title: "Producer",
   },
 ];
 
@@ -71,12 +74,18 @@ export default function Testimonials() {
               transition={{ duration: 0.8, ease: "easeInOut" }}
               className="absolute inset-0 flex flex-col items-center justify-center px-2"
             >
-              <p className="italic text-lg md:text-2xl lg:text-3xl text-white leading-relaxed mb-12" style={{ fontFamily: "var(--font-cursive)" }}>
+              <p
+                className="italic text-lg md:text-2xl lg:text-3xl text-white leading-relaxed mb-12"
+                style={{ fontFamily: "var(--font-cursive)" }}
+              >
                 &ldquo;{testimonials[current].quote}&rdquo;
               </p>
 
               <div className="flex flex-col items-center">
-                <h4 className="text-lg tracking-[0.2em] text-white uppercase" style={{ fontFamily: "var(--font-alt)" }}>
+                <h4
+                  className="text-lg tracking-[0.2em] text-white uppercase"
+                  style={{ fontFamily: "var(--font-alt)" }}
+                >
                   {testimonials[current].author}
                 </h4>
                 <span className="font-sans text-xs text-white/30 uppercase tracking-wider mt-1">

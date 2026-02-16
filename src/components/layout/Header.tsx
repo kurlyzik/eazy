@@ -94,7 +94,7 @@ export default function Header() {
             <div className="flex items-center gap-3">
               <div className="relative">
                 <span className="text-xl md:text-2xl tracking-[0.2em] text-white block leading-none" style={{ fontFamily: "var(--font-alt)" }}>
-                  EazyOnDaBeatz
+                  EazyOnDeBeatz
                 </span>
                 <span
                   className="block h-[1px] mt-1 origin-left transition-transform duration-500 group-hover:scale-x-100 scale-x-50"

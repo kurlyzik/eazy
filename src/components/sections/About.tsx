@@ -177,13 +177,13 @@ export default function About() {
               className="space-y-6 text-white/50 font-sans text-base md:text-lg leading-relaxed max-w-xl"
             >
               <p>
-                EazyOnDaBeatz is an Afrobeats producer from Lagos whose work is
+                EazyOnDeBeatz is an Afrobeats producer from Lagos whose work is
                 built on bounce, clarity, and replay value. Blending crisp
                 percussion with melodic textures, he creates records that feel
                 current while still carrying a signature groove.
               </p>
               <p>
-                With credits including Celo&apos;s &ldquo;Insanity,&rdquo; EazyOnDaBeatz
+                With credits including Celo&apos;s &ldquo;Insanity,&rdquo; EazyOnDeBeatz
                 continues to expand his sound through consistent releases and
                 creative partnerships.
               </p>

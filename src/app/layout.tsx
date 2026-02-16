@@ -62,14 +62,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "EazyOnDaBeatz | Afrobeats Producer",
-    template: "%s | EazyOnDaBeatz",
+    default: "EazyOnDeBeatz | Afrobeats Producer",
+    template: "%s | EazyOnDeBeatz",
   },
   description:
     "Afrobeats producer from Lagos. Crisp percussion, melodic textures, and records built on bounce, clarity, and replay value. Credits include Celo's Insanity.",
 
   keywords: [
-    "EazyOnDaBeatz",
+    "EazyOnDeBeatz",
     "Afrobeats producer",
     "Lagos producer",
     "beat maker",
@@ -83,9 +83,9 @@ export const metadata: Metadata = {
     "press play",
   ],
 
-  authors: [{ name: "EazyOnDaBeatz" }],
-  creator: "EazyOnDaBeatz",
-  publisher: "EazyOnDaBeatz",
+  authors: [{ name: "EazyOnDeBeatz" }],
+  creator: "EazyOnDeBeatz",
+  publisher: "EazyOnDeBeatz",
 
   robots: {
     index: true,
@@ -103,8 +103,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "EazyOnDaBeatz",
-    title: "EazyOnDaBeatz | Afrobeats Producer",
+    siteName: "EazyOnDeBeatz",
+    title: "EazyOnDeBeatz | Afrobeats Producer",
     description:
       "Afrobeats producer from Lagos. Crisp percussion, melodic textures, and records built on bounce, clarity, and replay value.",
     images: [
@@ -112,7 +112,7 @@ export const metadata: Metadata = {
         url: "/media/hero-poster.jpg",
         width: 1200,
         height: 630,
-        alt: "EazyOnDaBeatz — Afrobeats Producer",
+        alt: "EazyOnDeBeatz — Afrobeats Producer",
         type: "image/jpeg",
       },
     ],
@@ -120,7 +120,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "EazyOnDaBeatz | Afrobeats Producer",
+    title: "EazyOnDeBeatz | Afrobeats Producer",
     description:
       "Afrobeats producer from Lagos. Bounce, clarity, replay value. Press Play.",
     images: ["/media/hero-poster.jpg"],
@@ -147,7 +147,7 @@ function JsonLd() {
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
         url: siteUrl,
-        name: "EazyOnDaBeatz",
+        name: "EazyOnDeBeatz",
         description: "Afrobeats producer from Lagos. Bounce, clarity, replay value.",
         publisher: { "@id": `${siteUrl}/#person` },
         inLanguage: "en-US",
@@ -155,7 +155,7 @@ function JsonLd() {
       {
         "@type": "Person",
         "@id": `${siteUrl}/#person`,
-        name: "EazyOnDaBeatz",
+        name: "EazyOnDeBeatz",
         url: siteUrl,
         image: `${siteUrl}/media/hero-poster.jpg`,
         jobTitle: "Afrobeats Producer",
@@ -183,17 +183,17 @@ function JsonLd() {
         "@type": "WebPage",
         "@id": `${siteUrl}/#webpage`,
         url: siteUrl,
-        name: "EazyOnDaBeatz | Afrobeats Producer",
+        name: "EazyOnDeBeatz | Afrobeats Producer",
         isPartOf: { "@id": `${siteUrl}/#website` },
         about: { "@id": `${siteUrl}/#person` },
         description:
-          "Official portfolio of EazyOnDaBeatz — Afrobeats producer from Lagos.",
+          "Official portfolio of EazyOnDeBeatz — Afrobeats producer from Lagos.",
         inLanguage: "en-US",
       },
       {
         "@type": "MusicGroup",
         "@id": `${siteUrl}/#musicgroup`,
-        name: "EazyOnDaBeatz",
+        name: "EazyOnDeBeatz",
         url: siteUrl,
         image: `${siteUrl}/media/hero-poster.jpg`,
         genre: ["Afrobeats", "Afropop", "Afro-Fusion"],

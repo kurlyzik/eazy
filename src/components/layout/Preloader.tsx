@@ -316,9 +316,9 @@ export default function Preloader() {
           style={{ transform: "scaleX(0)", opacity: 0 }}
         />
 
-        {/* EazyOnDaBeatz letters */}
+        {/* EazyOnDeBeatz letters */}
         <div ref={lettersRef} className="flex items-center gap-0 px-4">
-          {"EazyOnDaBeatz".split("").map((letter, i) => (
+          {"EazyOnDeBeatz".split("").map((letter, i) => (
             <span
               key={i}
               className="preloader-letter text-[clamp(1.4rem,5vw,4rem)] leading-none tracking-normal text-white"
