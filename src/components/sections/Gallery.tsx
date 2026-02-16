@@ -10,26 +10,51 @@ import { IMAGES } from "@/lib/images";
 gsap.registerPlugin(ScrollTrigger);
 
 const photos = [
-  { id: 1, src: IMAGES.gallery.img01, title: "Midnight Session", category: "Studio" },
-  { id: 2, src: IMAGES.gallery.img02, title: "Backstage", category: "Lifestyle" },
+  {
+    id: 1,
+    src: IMAGES.gallery.img01,
+    title: "Midnight Session",
+    category: "Studio",
+  },
+  {
+    id: 2,
+    src: IMAGES.gallery.img02,
+    title: "Backstage",
+    category: "Lifestyle",
+  },
   { id: 3, src: IMAGES.gallery.img03, title: "Red Carpet", category: "Events" },
-  { id: 4, src: IMAGES.gallery.img04, title: "Analog Collection", category: "Studio" },
+  {
+    id: 4,
+    src: IMAGES.gallery.img04,
+    title: "Analog Collection",
+    category: "Studio",
+  },
   { id: 5, src: IMAGES.gallery.img05, title: "Main Stage", category: "Events" },
-  { id: 6, src: IMAGES.gallery.img06, title: "Press Feature", category: "Press" },
-  { id: 7, src: IMAGES.gallery.img07, title: "In the Mix", category: "Travel" },
-  { id: 8, src: IMAGES.gallery.img08, title: "Producer of the Year", category: "Studio" },
+  {
+    id: 6,
+    src: IMAGES.gallery.img06,
+    title: "Press Feature",
+    category: "Press",
+  },
+
+  {
+    id: 8,
+    src: IMAGES.gallery.img08,
+    title: "Producer of the Year",
+    category: "Studio",
+  },
 ];
 
 // Asymmetric layout — alternating tall/wide cards
 const layoutClasses = [
-  "md:col-span-2 md:row-span-2",  // 1 — large hero
-  "md:col-span-1 md:row-span-1",  // 2 — small
-  "md:col-span-1 md:row-span-2",  // 3 — tall
-  "md:col-span-1 md:row-span-1",  // 4 — small
-  "md:col-span-1 md:row-span-1",  // 5 — small
-  "md:col-span-2 md:row-span-1",  // 6 — wide
-  "md:col-span-1 md:row-span-1",  // 7 — small
-  "md:col-span-1 md:row-span-2",  // 8 — tall
+  "md:col-span-2 md:row-span-2", // 1 — large hero
+  "md:col-span-1 md:row-span-1", // 2 — small
+  "md:col-span-1 md:row-span-2", // 3 — tall
+  "md:col-span-1 md:row-span-1", // 4 — small
+  "md:col-span-1 md:row-span-1", // 5 — small
+  "md:col-span-2 md:row-span-1", // 6 — wide
+  "md:col-span-1 md:row-span-1", // 7 — small
+  "md:col-span-1 md:row-span-2", // 8 — tall
 ];
 
 export default function Gallery() {
@@ -47,7 +72,8 @@ export default function Gallery() {
 
     // Staggered reveal with slight rotation
     items.forEach((item, i) => {
-      gsap.fromTo(item,
+      gsap.fromTo(
+        item,
         {
           y: 80 + (i % 3) * 20,
           opacity: 0,
@@ -64,13 +90,14 @@ export default function Gallery() {
             start: "top 90%",
             toggleActions: "play none none none",
           },
-        }
+        },
       );
     });
 
     // Inner parallax — image moves within card on scroll
     images.forEach((img) => {
-      gsap.fromTo(img,
+      gsap.fromTo(
+        img,
         { yPercent: -8 },
         {
           yPercent: 8,
@@ -81,7 +108,7 @@ export default function Gallery() {
             end: "bottom top",
             scrub: 0.5,
           },
-        }
+        },
       );
     });
 
@@ -92,34 +119,59 @@ export default function Gallery() {
       const sub = titleRef.current.querySelector(".title-sub");
 
       if (line) {
-        gsap.fromTo(line, { scaleX: 0 }, {
-          scaleX: 1, duration: 1.2, ease: "power3.inOut",
-          scrollTrigger: { trigger: titleRef.current, start: "top 80%" },
-        });
+        gsap.fromTo(
+          line,
+          { scaleX: 0 },
+          {
+            scaleX: 1,
+            duration: 1.2,
+            ease: "power3.inOut",
+            scrollTrigger: { trigger: titleRef.current, start: "top 80%" },
+          },
+        );
       }
       if (text) {
-        gsap.fromTo(text, { y: 60, opacity: 0 }, {
-          y: 0, opacity: 1, duration: 1, delay: 0.3, ease: "power3.out",
-          scrollTrigger: { trigger: titleRef.current, start: "top 80%" },
-        });
+        gsap.fromTo(
+          text,
+          { y: 60, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            delay: 0.3,
+            ease: "power3.out",
+            scrollTrigger: { trigger: titleRef.current, start: "top 80%" },
+          },
+        );
       }
       if (sub) {
-        gsap.fromTo(sub, { y: 20, opacity: 0 }, {
-          y: 0, opacity: 1, duration: 0.8, delay: 0.5, ease: "power3.out",
-          scrollTrigger: { trigger: titleRef.current, start: "top 80%" },
-        });
+        gsap.fromTo(
+          sub,
+          { y: 20, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            delay: 0.5,
+            ease: "power3.out",
+            scrollTrigger: { trigger: titleRef.current, start: "top 80%" },
+          },
+        );
       }
     }
   }, []);
 
   // Lightbox nav
-  const handleNav = useCallback((dir: 1 | -1, e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (selectedImage === null) return;
-    const idx = photos.findIndex((p) => p.id === selectedImage);
-    const next = (idx + dir + photos.length) % photos.length;
-    setSelectedImage(photos[next].id);
-  }, [selectedImage]);
+  const handleNav = useCallback(
+    (dir: 1 | -1, e: React.MouseEvent) => {
+      e.stopPropagation();
+      if (selectedImage === null) return;
+      const idx = photos.findIndex((p) => p.id === selectedImage);
+      const next = (idx + dir + photos.length) % photos.length;
+      setSelectedImage(photos[next].id);
+    },
+    [selectedImage],
+  );
 
   // Keyboard nav for lightbox
   useEffect(() => {
@@ -140,16 +192,30 @@ export default function Gallery() {
   }, [selectedImage]);
 
   return (
-    <section ref={sectionRef} id="gallery" className="relative py-32 md:py-48 bg-black">
+    <section
+      ref={sectionRef}
+      id="gallery"
+      className="relative py-32 md:py-48 bg-black"
+    >
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Section header */}
         <div ref={titleRef} className="mb-20 md:mb-28">
-          <div className="title-line h-[1px] bg-gradient-to-r from-white/30 to-transparent origin-left mb-8 w-full max-w-[200px]" style={{ transform: "scaleX(0)" }} />
-          <h2 className="title-text text-6xl md:text-8xl lg:text-9xl text-white leading-[0.85] tracking-tight uppercase" style={{ fontFamily: "var(--font-decorative)", opacity: 0 }}>
-            IN THE<br />
+          <div
+            className="title-line h-[1px] bg-gradient-to-r from-white/30 to-transparent origin-left mb-8 w-full max-w-[200px]"
+            style={{ transform: "scaleX(0)" }}
+          />
+          <h2
+            className="title-text text-6xl md:text-8xl lg:text-9xl text-white leading-[0.85] tracking-tight uppercase"
+            style={{ fontFamily: "var(--font-decorative)", opacity: 0 }}
+          >
+            IN THE
+            <br />
             <span className="text-white/30">ROOM</span>
           </h2>
-          <p className="title-sub font-sans text-sm text-white/25 tracking-[0.2em] uppercase mt-6" style={{ opacity: 0 }}>
+          <p
+            className="title-sub font-sans text-sm text-white/25 tracking-[0.2em] uppercase mt-6"
+            style={{ opacity: 0 }}
+          >
             Behind the scenes &mdash; {photos.length} moments captured
           </p>
         </div>
@@ -174,7 +240,8 @@ export default function Gallery() {
                   style={{
                     backgroundImage: `url(${photo.src})`,
                     filter: "grayscale(30%) brightness(0.85)",
-                    transition: "transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), filter 0.7s ease",
+                    transition:
+                      "transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), filter 0.7s ease",
                   }}
                 />
               </div>
@@ -183,7 +250,8 @@ export default function Gallery() {
               <div
                 className="absolute inset-0 transition-opacity duration-500"
                 style={{
-                  background: "linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.8) 100%)",
+                  background:
+                    "linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.8) 100%)",
                 }}
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500" />
@@ -195,7 +263,10 @@ export default function Gallery() {
                 {/* Right */}
                 <span className="absolute top-0 right-0 w-[1px] bg-white/40 transition-all duration-700 ease-out delay-100 h-0 group-hover:h-full" />
                 {/* Bottom */}
-                <span className="absolute bottom-0 right-0 h-[1px] bg-white/40 transition-all duration-700 ease-out delay-200 w-0 group-hover:w-full origin-right" style={{ direction: "rtl" }} />
+                <span
+                  className="absolute bottom-0 right-0 h-[1px] bg-white/40 transition-all duration-700 ease-out delay-200 w-0 group-hover:w-full origin-right"
+                  style={{ direction: "rtl" }}
+                />
                 {/* Left */}
                 <span className="absolute bottom-0 left-0 w-[1px] bg-white/40 transition-all duration-700 ease-out delay-300 h-0 group-hover:h-full origin-bottom" />
               </div>
@@ -223,7 +294,10 @@ export default function Gallery() {
                 </div>
                 <div className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 delay-200">
                   <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-300">
-                    <ArrowUpRight size={14} className="text-white group-hover:text-black transition-colors duration-300" />
+                    <ArrowUpRight
+                      size={14}
+                      className="text-white group-hover:text-black transition-colors duration-300"
+                    />
                   </div>
                 </div>
               </div>
@@ -271,7 +345,9 @@ export default function Gallery() {
             {/* Image counter */}
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4">
               <span className="font-mono text-sm text-white/40">
-                {String((photos.findIndex(p => p.id === selectedImage) ?? 0) + 1).padStart(2, "0")}
+                {String(
+                  (photos.findIndex((p) => p.id === selectedImage) ?? 0) + 1,
+                ).padStart(2, "0")}
               </span>
               <span className="w-8 h-[1px] bg-white/20" />
               <span className="font-mono text-sm text-white/20">
@@ -297,13 +373,15 @@ export default function Gallery() {
                     loading="lazy"
                   />
                   <div className="mt-6 flex items-center gap-4">
-                    <span className="font-display text-lg text-white/70">{photo.title}</span>
+                    <span className="font-display text-lg text-white/70">
+                      {photo.title}
+                    </span>
                     <span className="text-[10px] font-sans uppercase tracking-[0.2em] text-white/30 border border-white/10 px-2 py-0.5 rounded-full">
                       {photo.category}
                     </span>
                   </div>
                 </motion.div>
-              ) : null
+              ) : null,
             )}
           </motion.div>
         )}
