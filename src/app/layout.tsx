@@ -6,6 +6,7 @@ import GrainOverlay from "@/components/layout/GrainOverlay";
 import CustomCursor from "@/components/layout/CustomCursor";
 import Preloader from "@/components/layout/Preloader";
 import ScrollProgress from "@/components/layout/ScrollProgress";
+import SocialBar from "@/components/layout/SocialBar";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -246,6 +247,7 @@ export default function RootLayout({
           <CustomCursor />
           <Preloader />
           <ScrollProgress />
+          <SocialBar />
           {children}
         </SmoothScroll>
       </body>

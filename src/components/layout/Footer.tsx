@@ -1,12 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Instagram, Music2 } from "lucide-react";
-
-const socials = [
-  { icon: Instagram, href: "https://instagram.com/eazyondebeatz_", label: "Instagram" },
-  { icon: Music2, href: "https://open.spotify.com/user/31nlkyhcf7mf3qrrqfnr254jypay", label: "Spotify" },
-];
 
 export default function Footer() {
   return (
@@ -15,19 +9,6 @@ export default function Footer() {
         <Link href="/" className="font-display text-lg tracking-[0.15em] text-white/30 hover:text-white transition-colors">
           EazyOnDeBeatz
         </Link>
-
-        <div className="flex gap-4">
-          {socials.map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/30 hover:text-white hover:border-white/30 transition-all duration-300"
-              aria-label={social.label}
-            >
-              <social.icon size={16} />
-            </a>
-          ))}
-        </div>
 
         <span className="text-[11px] text-white/20 font-sans tracking-wider">
           &copy; {new Date().getFullYear()} EazyOnDeBeatz. All rights reserved.

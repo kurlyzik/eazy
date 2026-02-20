@@ -19,7 +19,7 @@ export const IMAGES = {
   // ─── ARTIST PORTRAITS ────────────────────────────────────────
   artists: {
     celo: "https://i.scdn.co/image/ab6761610000e5eb70b6546a99e68042fb9353f0",
-    otega: "https://i.scdn.co/image/ab6761610000e5ebf64e8ce5f67b296ebf98ce1f",
+    otega: "https://i.scdn.co/image/ab6761610000e5ebb659c68bb62435e8e26dd073",
     mohbad: "https://i.scdn.co/image/ab6761610000e5eb5229542d1c2abba84abbf545",
     dannyello:
       "https://i.scdn.co/image/ab6761610000e5ebb4c9da97d90992198ddba60c",

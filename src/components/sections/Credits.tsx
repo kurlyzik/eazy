@@ -21,7 +21,7 @@ const credits = [
     image: IMAGES.artists.otega,
     tracks: ["Don Julio", "Paradise", "2Fa", "Concentrate"],
     role: "Artiste",
-    spotify: "https://open.spotify.com/artist/1yneaf3cnlnX0XWGiPibcS",
+    spotify: "https://open.spotify.com/artist/08Fcm7JKxT1qummaWUzavs",
   },
   {
     name: "Mohbad",
@@ -44,14 +44,7 @@ const credits = [
     role: "Artiste",
     spotify: "https://open.spotify.com/artist/7rABiO2ENPTcWfvQoKL6tu",
   },
-  {
-    name: "Blaqmix",
-    image: IMAGES.artists.blaqmix,
-    tracks: ["I Obey"],
-    role: "Artiste",
-    spotify: "#",
-  },
-  {
+{
     name: "Layonn",
     image: IMAGES.artists.layonn,
     tracks: ["I Obey"],
@@ -76,14 +69,16 @@ export default function Credits() {
     const viewWidth = window.innerWidth;
 
     // Horizontal scroll
+    const getScrollDistance = () => gallery.scrollWidth - window.innerWidth;
+
     gsap.to(gallery, {
-      x: -(totalWidth - viewWidth),
+      x: () => -getScrollDistance(),
       ease: "none",
       scrollTrigger: {
         trigger: sectionRef.current,
         pin: true,
         scrub: 1,
-        end: () => "+=" + (totalWidth - viewWidth),
+        end: () => "+=" + getScrollDistance(),
         invalidateOnRefresh: true,
       },
     });
@@ -160,7 +155,7 @@ export default function Credits() {
           </p>
         </div>
 
-        <div ref={galleryRef} className="flex gap-8 pl-6 md:pl-12 w-max">
+        <div ref={galleryRef} className="flex gap-8 pl-6 md:pl-12 pr-6 md:pr-12 w-max">
           {credits.map((credit, i) => (
             <a
               key={credit.name}
